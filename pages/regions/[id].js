@@ -1,0 +1,71 @@
+import Layout from '../../components/layout';
+import {ApolloClient, gql, InMemoryCache} from "@apollo/client";
+
+const client = new ApolloClient({
+    uri: "https://decentralization.gov.ua/graphql/",
+    cache: new InMemoryCache(),
+});
+
+export default function Region({ area }) {
+    return <Layout>
+        <h1>{area.title}</h1>
+        <h2>Площа: {area.square} м²</h2>
+        <h2>Кількість населення: {area.population}</h2>
+        <h2>К-ть територіальних громад: {area.local_community_count}</h2>
+        <h2>Відсоток громад по області: {area.percent_communities_from_area}</h2>
+        <h2>Площа об'єднаних громад: {area.sum_communities_square} м²</h2>
+
+    </Layout>;
+}
+
+export async function getStaticPaths() {
+
+    const { data } = await client.query({
+        query: gql`
+        query {
+          areas
+          {
+          id
+          }
+      }
+    `,
+    });
+    console.log(data.areas.id);
+    const paths = data.areas.map(({id}) =>{ return {
+            params: {
+                id: `${id}`,
+            },
+        };}
+    );
+
+    return {
+        paths,
+        fallback: false,
+    };
+
+}
+
+export async function getStaticProps({ params }) {
+
+    const { data } = await client.query({
+        query: gql`
+        query{
+          area(id: "${params.id}")
+          {
+          title
+          id
+          square
+          population
+          local_community_count
+          percent_communities_from_area
+          sum_communities_square
+          }
+      }
+      `,variables:{id: params.id}
+    });
+    return {
+        props: {
+            area: data.area,
+        },
+    };
+}
