@@ -6,7 +6,7 @@ export const siteTitle = 'Study project';
 
 export default function Layout({ children, home }) {
     return (
-        <div className={styles.container}>
+        <div>
             <Head>
                 <link rel="icon" href="/favicon.ico" />
                 <meta
@@ -34,12 +34,11 @@ export default function Layout({ children, home }) {
                 ) : (
                     <>
 
-                               <h1>Ukraine</h1>
 
                     </>
                 )}
             </header>
-            <main>{children}</main>
+            <main className={styles.container}>{children}</main>
             {!home && (
                 <div className={styles.backToHome}>
                     <Link href="/">

@@ -1,21 +1,20 @@
 import React from "react";
-import { Heading, Text, SimpleGrid } from "@chakra-ui/react";
+import {Heading, Text, SimpleGrid, Box} from "@chakra-ui/react";
 import Link from "next/link";
 
 const Regions = ({ areas }) => {
+ console.log(areas);
     return (
-        <SimpleGrid columns={[1, 2, 3,4]} spacing="50px">
+        <SimpleGrid columns={4} spacing="50px">
             {areas.map((area) => {
                 return (
-                    <div key={area.id}>
-                        <Heading as="h4" align="center" size="md">
-                            <Link href={`/regions/${area.id}`}>
-                                <a>{area.title}</a>
-                            </Link>
-                        </Heading>
-                        <Text align="center">Population: {area.population}</Text>
-                        <Text align="center">Square: {area.square}</Text>
-                    </div>
+                    <Link href={`/regions/${area.id}`}>
+                    <Box alignItems='flex-start' key={area.id}>
+                        <Heading as="h4"  size="md">{area.title}</Heading>
+                        <Text >Population: {area.population}</Text>
+                        <Text >Square: {area.square}</Text>
+                    </Box>
+                    </Link>
                 );
             })}
         </SimpleGrid>

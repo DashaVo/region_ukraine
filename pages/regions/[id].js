@@ -1,5 +1,7 @@
-import Layout from '../../components/layout';
+import Layout, {siteTitle} from '../../components/layout';
 import {ApolloClient, gql, InMemoryCache} from "@apollo/client";
+import Image from 'next/image'
+import Head from "next/head";
 
 const client = new ApolloClient({
     uri: "https://decentralization.gov.ua/graphql/",
@@ -7,13 +9,24 @@ const client = new ApolloClient({
 });
 
 export default function Region({ area }) {
-    return <Layout>
-        <h1>{area.title}</h1>
-        <h2>Площа: {area.square} м²</h2>
-        <h2>Кількість населення: {area.population}</h2>
-        <h2>К-ть територіальних громад: {area.local_community_count}</h2>
-        <h2>Відсоток громад по області: {area.percent_communities_from_area}</h2>
-        <h2>Площа об'єднаних громад: {area.sum_communities_square} м²</h2>
+    const path = `/../public/images/regions/${area.id}/map.png`
+    return <Layout >
+        <Head>
+            <title>{area.title}</title>
+        </Head>
+        <Image
+            src={path}
+            height={344}
+            width={544}
+            alt="area_map"/>
+        <div>
+            <h1>{area.title}</h1>
+            <h2>Площа: {area.square} м²</h2>
+            <h2>Кількість населення: {area.population}</h2>
+            <h2>К-ть територіальних громад: {area.local_community_count}</h2>
+            <h2>Відсоток громад по області: {area.percent_communities_from_area}</h2>
+            <h2>Площа об'єднаних громад: {area.sum_communities_square} м²</h2>
+        </div>
 
     </Layout>;
 }
