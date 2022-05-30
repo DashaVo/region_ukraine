@@ -9,9 +9,6 @@ import nature from '/public/images/nature.jpg'
 import {Flex, Box, Heading} from "@chakra-ui/react";
 import { FaUsers, FaMoneyBill, FaLanguage,FaMapMarkerAlt, FaRegHeart } from "react-icons/fa";
 
-export const loader = ({src})=>{
-    return `${src}`
-}
 export default function Home({areas}) {
   return (
       <Layout home>
@@ -27,6 +24,7 @@ export default function Home({areas}) {
               src={nature}
               height={804}
               width={1920}
+              unoptimized={true}
               alt="area_map"/>
           <Flex justify="space-evenly" align="center" m='3em'>
               <Box align='center' bg='lightsteelblue' borderRadius="0.2em" h='8em' w='10em' p='1em' color='white' fontSize='xl'>
