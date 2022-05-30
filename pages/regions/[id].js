@@ -1,4 +1,4 @@
-import Layout, {siteTitle} from '/components/Layout';
+import Layout from '/components/Layout';
 import {ApolloClient, gql, InMemoryCache} from "@apollo/client";
 import Image from 'next/image'
 import Head from "next/head";
@@ -9,7 +9,7 @@ const client = new ApolloClient({
 });
 
 export default function Region({ area }) {
-    const path = `/../public/images/regions/${area.id}/map.png`
+    const path = `/public/images/regions/${area.id}/map.png`
     return <Layout >
         <Head>
             <title>{area.title}</title>
