@@ -23,7 +23,7 @@ export default function Home({areas}) {
               alt="area_map"/>
           <Box>original jpg</Box>
           <Image
-              src={orgnature}
+              src="https://raw.githubusercontent.com/DashaVo/region_ukraine/main/public/images/orgnature.jpg"
               height={804}
               width={1920}
               alt="area_map"/>
