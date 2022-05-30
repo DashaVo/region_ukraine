@@ -5,6 +5,7 @@ import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
 import Regions from "/components/regions";
 import fetch from "fetch";
 import Image from "next/image";
+import nature from '/public/images/nature.jpg'
 import {Flex, Box, Heading} from "@chakra-ui/react";
 import { FaUsers, FaMoneyBill, FaLanguage,FaMapMarkerAlt, FaRegHeart } from "react-icons/fa";
 
@@ -23,7 +24,7 @@ export default function Home({areas}) {
               width={544}
               alt="area_map"/>
           <Image
-              src="/public/images/nature.jpg"
+              src={nature}
               height={804}
               width={1920}
               alt="area_map"/>
