@@ -6,6 +6,7 @@ import Regions from "/components/regions";
 import fetch from "fetch";
 import Image from "next/image";
 import nature from '/public/images/nature.jpg'
+import orgnature from '/public/images/orgnature.jpg'
 import {Flex, Box, Heading} from "@chakra-ui/react";
 import { FaUsers, FaMoneyBill, FaLanguage,FaMapMarkerAlt, FaRegHeart } from "react-icons/fa";
 
@@ -20,6 +21,13 @@ export default function Home({areas}) {
               height={344}
               width={544}
               alt="area_map"/>
+          <Box>original jpg</Box>
+          <Image
+              src={orgnature}
+              height={804}
+              width={1920}
+              alt="area_map"/>
+          <Box>Mozpeg jpg</Box>
           <Image
               src={nature}
               height={804}
