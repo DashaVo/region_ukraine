@@ -3,7 +3,6 @@ import {Heading, Text, SimpleGrid, Box} from "@chakra-ui/react";
 import Link from "next/link";
 
 const Regions = ({ areas }) => {
- console.log(areas);
     return (
         <SimpleGrid columns={4} spacing="50px">
             {areas.map((area) => {
