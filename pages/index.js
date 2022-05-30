@@ -1,11 +1,11 @@
 import Head from 'next/head';
-import Layout, { siteTitle } from '../components/layout';
-import utilStyles from '../styles/utils.module.css';
+import Layout, { siteTitle } from '/components/layout';
+import utilStyles from '/styles/utils.module.css';
 import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
-import Regions from "../components/regions";
+import Regions from "/components/regions";
 import fetch from "fetch";
 import Image from "next/image";
-import {Flex, Box, Heading, Text} from "@chakra-ui/react";
+import {Flex, Box, Heading} from "@chakra-ui/react";
 import { FaUsers, FaMoneyBill, FaLanguage,FaMapMarkerAlt, FaRegHeart } from "react-icons/fa";
 
 export const loader = ({src})=>{
@@ -23,7 +23,7 @@ export default function Home({areas}) {
               width={544}
               alt="area_map"/>
           <Image
-              src="/../public/images/nature.jpg"
+              src="/public/images/nature.jpg"
               height={804}
               width={1920}
               alt="area_map"/>

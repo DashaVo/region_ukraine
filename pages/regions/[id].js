@@ -1,4 +1,4 @@
-import Layout from '../../components/layout';
+import Layout from '/components/Layout';
 import {ApolloClient, gql, InMemoryCache} from "@apollo/client";
 import Image from 'next/image'
 import Head from "next/head";
