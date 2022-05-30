@@ -1,4 +1,4 @@
-import Layout from '/components/Layout';
+import Layout, {siteTitle} from '/components/Layout';
 import {ApolloClient, gql, InMemoryCache} from "@apollo/client";
 import Image from 'next/image'
 import Head from "next/head";
@@ -15,7 +15,6 @@ export default function Region({ area }) {
             <title>{area.title}</title>
         </Head>
         <Image
-            unoptimized={true}
             src={path}
             height={344}
             width={544}
