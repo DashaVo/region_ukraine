@@ -24,7 +24,6 @@ export default function Home({areas}) {
               src={nature}
               height={804}
               width={1920}
-              unoptimized={true}
               alt="area_map"/>
           <Flex justify="space-evenly" align="center" m='3em'>
               <Box align='center' bg='lightsteelblue' borderRadius="0.2em" h='8em' w='10em' p='1em' color='white' fontSize='xl'>
