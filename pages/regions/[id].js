@@ -9,13 +9,12 @@ const client = new ApolloClient({
 });
 
 export default function Region({ area }) {
-    const path = `/public/images/regions/${area.id}/map.png`
+    const path = `/../public/images/regions/${area.id}/map.png`
     return <Layout >
         <Head>
             <title>{area.title}</title>
         </Head>
         <Image
-            unoptimized={true}
             src={path}
             height={344}
             width={544}
