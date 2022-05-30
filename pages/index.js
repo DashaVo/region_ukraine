@@ -8,7 +8,9 @@ import Image from "next/image";
 import {Flex, Box, Heading, Text} from "@chakra-ui/react";
 import { FaUsers, FaMoneyBill, FaLanguage,FaMapMarkerAlt, FaRegHeart } from "react-icons/fa";
 
-
+export const loader = ({src})=>{
+    return `${src}`
+}
 export default function Home({areas}) {
   return (
       <Layout home>
@@ -16,14 +18,14 @@ export default function Home({areas}) {
           <title>{siteTitle}</title>
         </Head>
           <Image
-              src="/../public/images/ukraine.webp"
+              src="https://raw.githubusercontent.com/link-u/avif-sample-images/master/kimono.avif"
               height={344}
               width={544}
               alt="area_map"/>
           <Image
-              src="/../public/images/ukraine_landskape.webp"
-              height={344}
-              width={544}
+              src="/../public/images/nature.jpg"
+              height={804}
+              width={1920}
               alt="area_map"/>
           <Flex justify="space-evenly" align="center" m='3em'>
               <Box align='center' bg='lightsteelblue' borderRadius="0.2em" h='8em' w='10em' p='1em' color='white' fontSize='xl'>
