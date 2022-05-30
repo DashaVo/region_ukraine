@@ -15,6 +15,7 @@ export default function Region({ area }) {
             <title>{area.title}</title>
         </Head>
         <Image
+            unoptimized={true}
             src={path}
             height={344}
             width={544}
